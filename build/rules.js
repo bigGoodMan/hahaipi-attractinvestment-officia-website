@@ -2,14 +2,14 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const devEnv = process.env.NODE_ENV === 'development'
 module.exports = [
   {
-    test: /\.(css|scss|stylus)$/,
-    use: [{
+    test: /\.(css|styl|stylus)$/,
+    use: [devEnv ? 'style-loader' : {
       loader: MiniCssExtractPlugin.loader, // 防止css重复打包
       options: {
         // you can specify a publicPath here
         // by default it uses publicPath in webpackOptions.output
-        publicPath: '../',
-        hmr: devEnv // Hot Module Reloading
+        publicPath: './'
+        // hmr: devEnv // Hot Module Reloading
       }
     }, {
       loader: 'css-loader' // translates CSS into CommonJS

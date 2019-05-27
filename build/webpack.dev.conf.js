@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const webpackBaseConf = require('./webpack.base.conf')
+console.log(path.join(__dirname, '../src'), path.resolve(__dirname, '../dist'))
 const webpackConfigDev = {
   mode: 'development', // 研发环境
   output: {
@@ -13,7 +14,7 @@ const webpackConfigDev = {
   devServer: {
     contentBase: path.join(__dirname, '../src'),
     publicPath: '/',
-    host: '100.100.100.23',
+    host: '0.0.0.0',
     port: '8080',
     overlay: true, // 浏览器页面上显示错误
     open: true, // 开启浏览器
