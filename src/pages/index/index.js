@@ -1,15 +1,10 @@
 import './index.styl'
-// import obj from '@assets/js/common.js'
-// import { testMain } from '@/main'
-import { testTool } from '@lib/tools.js'
-import $ from 'jquery'
-console.log(1)
-const abc = {
-  a: 1
-}
-testTool()
-// testMain()
-// console.log(obj.name)
-const bbb = Object.keys(abc).filter(v => true)
-console.log(bbb)
-$('body').append('<div>sbbbbb<div>')
+import ChangeScroll from '@lib/changeScroll'
+/* eslint-disable no-new */
+new ChangeScroll({
+  clickClsEle: '.nav-menu',
+  controlClsEle: '.index-menu-block',
+  callback (obj) {
+    console.log(obj)
+  }
+})

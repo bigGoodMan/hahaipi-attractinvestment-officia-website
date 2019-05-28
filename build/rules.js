@@ -8,15 +8,23 @@ module.exports = [
       options: {
         // you can specify a publicPath here
         // by default it uses publicPath in webpackOptions.output
-        publicPath: './'
+        publicPath: '../'
         // hmr: devEnv // Hot Module Reloading
       }
     }, {
       loader: 'css-loader' // translates CSS into CommonJS
     }, {
-      loader: 'postcss-loader' // compiles Less to CSS
+      loader: 'postcss-loader'
+      // options: {
+      //   plugins: () => { // 已经卸载postcss.config.js配置里面
+      //     return [
+      //       require('postcss-import')(), // 一定要写在require("autoprefixer")前面，否则require("autoprefixer")无效
+      //       require('autoprefixer')({ browsers: ['last 5 versions'] })
+      //     ]
+      //   }
+      // }
     }, {
-      loader: 'stylus-loader' // compiles Less to CSS
+      loader: 'stylus-loader' // compiles stylus to CSS
     }
     ]
   },

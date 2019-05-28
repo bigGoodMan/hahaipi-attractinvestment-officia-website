@@ -48,7 +48,10 @@
     "build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.conf.js",
     "serve": "live-server ./dist --port=8888"
   },
-  "sideEffects": ["*.css","*.styl"],
+  "sideEffects": [
+    "*.css",
+    "*.styl"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HighWarmModel/hahaipi-attractinvestment-officia-website.git"
