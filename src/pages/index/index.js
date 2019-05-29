@@ -1,6 +1,6 @@
 import './index.styl'
 import ChangeScroll from '@lib/changeScroll'
-/* eslint-disable no-new */
+console.log(document.querySelectorAll('.index-menu-block')[1], document.querySelectorAll('.index-menu-block')[1].offsetTop)
 new ChangeScroll({
   clickClsEle: '.nav-menu',
   controlClsEle: '.index-menu-block',

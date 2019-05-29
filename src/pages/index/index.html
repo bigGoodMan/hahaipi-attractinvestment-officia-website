@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link href="https://cdn.bootcss.com/Swiper/4.5.0/css/swiper.min.css" rel="stylesheet">
 </head>
+
 <body>
-  <div class="min-width-1200">
+  <div class="min-width-1280">
     <!-- header -->
     <header class="header">
-      <nav class="nav flex-row flex-between-center margin-lr-auto width-1200" >
+      <nav class="nav flex-row flex-between-center margin-lr-auto max-width-1200">
         <h5 class="margin-0">logo</h5>
         <ul class="no-ul flex-row flex-center-stretch color-f">
           <li class="nav-menu" data-sign="1">首页</li>
@@ -18,7 +21,7 @@
           <li class="nav-menu" data-sign="3">成功案例</li>
           <li class="nav-menu" data-sign="4">服务中心</li>
           <li class="nav-menu" data-sign="5">软件下载</li>
-          <li class="nav-menu" data-sign="6">联系我们</li>
+          <li class="nav-menu" data-sign="4">联系我们</li>
         </ul>
       </nav>
     </header>
@@ -28,30 +31,100 @@
       <div class="index-menu-block index-banner" data-sign="1">
         <div></div>
       </div>
-      <!-- 嗨皮创业 -->
-      <div class="index-menu-block bg-color-f index-haipi-entrepreneurship" data-sign="2">
-        <div class="index-haipi-info flex-row flex-between-stretch">
-          <div class="index-logo">
-            <div class="bg-color-red" style="width:184px;height:184px;"></div>
-            <span class="size-24 color-30">洞见云 运营管理系统</span>
+      <!-- 洞见云介绍 -->
+      <div class="index-menu-block bg-color-f index-introduce" data-sign="2">
+        <div class="margin-lr-auto width-1280">
+          <div class="index-info flex-row flex-between-stretch">
+            <div class="index-logo flex-column flex-between-center">
+              <div class="bg-color-red" style="width:184px;height:184px;"></div>
+              <span class="size-24 color-30">洞见云 运营管理系统</span>
+            </div>
+            <div class="index-right-content">
+              <h5 class="text-center color-30 size-36 weight-bold index-title">洞见科技</h5>
+              <p class="margin-0 text-center color-a0 size-24 index-article">杭州洞见科技有限公司成立于2015年，是一家以新娱乐为主导的创新互联网公司，</p>
+              <p class="margin-0 text-center color-a0 size-24 index-article">公司经过多年研发运营，通过技术创新为传统娃娃机赋能，</p>
+              <p class="margin-0 text-center color-a0 size-24 index-article">打造“互联网+娃娃机”的新娱乐生态模式，为加盟商户提供娃娃机一站式解决方案。</p>
+            </div>
           </div>
-          <div class="flex-1">
-            <h5 class="text-center color-30 size-36 weight-bold index-title">洞见科技</h5>
-            <p class="margin-0 text-center color-a0 size-24 index-article">杭州洞见科技有限公司成立于2015年，是一家以新娱乐为主导的创新互联网公司，</p>
-            <p class="margin-0 text-center color-a0 size-24 index-article">公司经过多年研发运营，通过技术创新为传统娃娃机赋能，</p>
-            <p class="margin-0 text-center color-a0 size-24 index-article">打造“互联网+娃娃机”的新娱乐生态模式，为加盟商户提供娃娃机一站式解决方案。</p>
+          <ul class="no-ul flex-row flex-between-center index-column">
+            <li class="index-list flex-column flex-start-stretch">
+              <div class="index-list-top-block"></div>
+              <div class="index-list-container flex-1"></div>
+            </li>
+            <li class="index-list flex-column flex-start-stretch">
+              <div class="index-list-top-block"></div>
+              <div class="index-list-container flex-1"></div>
+            </li>
+            <li class="index-list flex-column flex-start-stretch">
+              <div class="index-list-top-block"></div>
+              <div class="index-list-container flex-1"></div>
+            </li>
+            <li class="index-list flex-column flex-start-stretch">
+              <div class="index-list-top-block"></div>
+              <div class="index-list-container flex-1"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- 嗨皮创业 -->
+      <div class="index-menu-block index-entrepreneurship bg-color-fa" data-sign="3">
+        <div class="index-common-title">
+          <div class="text-center color-30 size-28"><span>创业服务</span></div>
+          <div class="text-center color-a0 size-16 margin-top-20">保姆式样全程经营辅助</div>
+        </div>
+        <div class="index-img-banner bg-color-red"></div>
+        <div class="margin-lr-auto max-width-1200">
+          <h5 class="index-title size-30 color-0 weight-400">专业团队为你提供</h5>
+          <div class="index-column">
+            <ul class="no-ul flex-row flex-between-start">
+              <li class="index-list">
+                <h5 class="margin-0 size-28 color-red weight-400">专家指导选址</h5>
+                <p class="margin-0 color-a size-18">门店点位选址决定了客户人流大小，与娃娃机生意成败有着至关重要的作用。嗨皮运营专家为创业者选址做出专业评估和建议。</p>
+              </li>
+              <li class="index-list">
+                <h5 class="margin-0 size-28 color-red weight-400">运营培训</h5>
+                <p class="margin-0 color-a size-18">由资深运营人员提供专业的运营指导，涵盖店铺运营中的各个关键，避免采坑，轻松上手娃娃机生意。</p>
+              </li>
+              <li class="index-list">
+                <h5 class="margin-0 size-28 color-red weight-400">辅助订货</h5>
+                <p class="margin-0 color-a size-18">嗨皮时光和神采飞扬超过10000个游艺设备积累的礼品大数据，由礼品运营专家严格筛选，提供最佳的订货选择。取得礼品成本和客户吸引力间最佳平衡。</p>
+              </li>
+            </ul>
           </div>
         </div>
-        <ul class="no-ul">
-          <li></li>
-        </ul>
       </div>
-      <div class="index-menu-block" style="height:500px;background-color:green;" data-sign="3">33333333</div>
-      <div class="index-menu-block" style="height:500px;background-color:yellow;" data-sign="4">44444444</div>
+      <!-- 其它疑问 -->
+      <div class="index-menu-block index-other-questions bg-color-red" data-sign="4">
+        <div class="margin-lr-auto max-width-1200">
+          <h5 class="index-title margin-0 size-36 color-f text-center">200家线下门店，30年娃娃机，10000台娱乐设备经营为您创业，保驾护航</h5>
+          <p class="index-describe margin-0 size-36 color-f text-center">留下联系方式免费获取娃娃机创业指导手册</p>
+          <div class="flex-row flex-center" style="margin-top: 80px;">
+            <ul class="no-ul flex-row index-form">
+              <li class="index-input-list bg-color-f flex-row flex-between-center">
+                <span class="size-24 color-a">姓名：</span>
+                <input class="index-input-content flex-1 size-24 color-30">
+              </li>
+              <li class="index-input-list index-input-phone bg-color-f flex-row flex-between-center">
+                  <span class="size-24 color-a">手机：</span>
+                <input class="index-input-content flex-1 size-24 color-30">
+              </li>
+              <li class="index-input-button">
+                  <div class="index-button-content text-center size-24 color-f">免费领取</div>
+              </li>
+            </ul>
+          </div>
+          <p class="index-tip flex-row flex-between-center">
+            <span class="size-24 color-f">我们严格遵守用户保密条款，维护用户资料安全</span>
+            <span class="size-24 color-f">创业热线：+8600000000 service@i3020.com</span>
+          </p>
+        </div>
+      </div>
       <div class="index-menu-block" style="height:500px;background-color:yellow;" data-sign="5">44444444</div>
       <div class="index-menu-block" style="height:500px;background-color:yellow;" data-sign="6">44444444</div>
     </section>
     <footer></footer>
   </div>
+  <script src="https://cdn.bootcss.com/Swiper/4.5.0/js/swiper.min.js"></script>
 </body>
+
 </html>

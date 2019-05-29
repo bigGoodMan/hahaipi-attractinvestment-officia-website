@@ -8,6 +8,7 @@ module.exports = {
     '$': true
   },
   'rules': {
-    'no-void': 0
+    'no-void': 0,
+    'no-new': 0
   }
 }

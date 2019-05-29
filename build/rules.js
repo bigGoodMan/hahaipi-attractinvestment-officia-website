@@ -8,7 +8,7 @@ module.exports = [
       options: {
         // you can specify a publicPath here
         // by default it uses publicPath in webpackOptions.output
-        publicPath: '../'
+        publicPath: './'
         // hmr: devEnv // Hot Module Reloading
       }
     }, {
@@ -45,7 +45,9 @@ module.exports = [
       loader: 'url-loader',
       options: {
         limit: 5 * 1024, // 小于这个时将会已base64位图片打包处理
-        outputPath: 'img' // 图片文件输出的文件夹
+        outputPath: 'img', // 图片文件输出的文件夹
+        name: '[name].[ext]',
+        publicPath: devEnv ? './img' : 'http://www.hahaipi.com/img/' // 浏览器图片加载路径
       }
     }]
   },
