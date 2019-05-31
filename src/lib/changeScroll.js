@@ -1,4 +1,4 @@
-import { eventThrottle, getParentsOffsetTop } from './tools'
+import { eventThrottle, getParentsOffsetTop, getWebType } from './tools'
 import Animate from './animate'
 class ChangeScroll {
   /**
@@ -40,8 +40,13 @@ class ChangeScroll {
         // if (typeof window.getComputedStyle(document.body).scrollBehavior === void 0) {
         //   // 传统的JS平滑滚动处理代码...
         // }
-      animate.clear()
-        animate.easeOut(idEle.scrollTop, originScroll, 10, function (val) {
+        animate.clear()
+        animate.easeOut(idEle.scrollTop || document.body.scrollTop, originScroll, 10, function (val) {
+          let webType = getWebType()
+          if (idEle === document.documentElement && (webType.isIE || webType.isEdge)) {
+            document.body.scrollTop = val
+            return
+          }
           idEle.scrollTop = val
         })
       }
@@ -66,7 +71,7 @@ class ChangeScroll {
     })
   }
   clearScroll () {
-    this.idEle.removeEventListener('scroll', this.scrollFunc)
+    this.w.removeEventListener('scroll', this.scrollFunc)
   }
 }
 export default ChangeScroll

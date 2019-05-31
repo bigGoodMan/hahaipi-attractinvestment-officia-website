@@ -1,11 +1,13 @@
 module.exports = {
   root: true,
   'extends': 'standard',
-  plugins: [
-    'html'
-  ],
+  // plugins: [
+  //   'html'
+  // ],
   globals: {
-    '$': true
+    '$': true,
+    'Swiper': 1,
+    'layer': 1
   },
   'rules': {
     'no-void': 0,

@@ -29,6 +29,11 @@ module.exports = [
     ]
   },
   {
+    test: /\.html$/,
+    // html中的img标签
+    use: ['html-withimg-loader']
+  },
+  {
     test: /\.js$/,
     exclude: /(node_modules|bower_components)/,
     use: {
@@ -47,7 +52,7 @@ module.exports = [
         limit: 5 * 1024, // 小于这个时将会已base64位图片打包处理
         outputPath: 'img', // 图片文件输出的文件夹
         name: '[name].[ext]',
-        publicPath: devEnv ? './img' : 'http://www.hahaipi.com/img/' // 浏览器图片加载路径
+        publicPath: devEnv ? './img' : '../img' // 浏览器图片加载路径
       }
     }]
   },

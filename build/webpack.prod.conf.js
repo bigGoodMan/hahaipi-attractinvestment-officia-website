@@ -16,6 +16,9 @@ const webpackConfigProd = {
     publicPath: './'
   },
   devtool: 'none',
+  externals: {
+    jquery: 'jQuery'
+  },
   plugins: [
     // 清除文件
     new CleanWebpackPlugin({

@@ -27,6 +27,8 @@ function getHtmlsFunc (fileObj, com) {
     htmlWebpackPluginArr.push(new HtmlWebpackPlugin({
       template: `./src/pages/${name}/${name}.html`,
       filename: `${name}.html`,
+      favicon: path.resolve(__dirname, `../src/pages/${name}/favicon-128×128.ico`),
+      // favicon: `./src/pages/${name}/favicon.ico`,
       inject: true,
       hash: true,
       chunks: [name, 'vender', ...Object.keys(com)],
@@ -51,7 +53,8 @@ module.exports = {
     alias: {
       '@': path.join(__dirname, '..', 'src'),
       '@assets': path.join(__dirname, '..', 'src/assets'),
-      '@lib': path.join(__dirname, '..', 'src/lib')
+      '@lib': path.join(__dirname, '..', 'src/lib'),
+      '@api': path.join(__dirname, '..', 'src/api')
     }
   },
   externals: { // 不会从node_modules打包进去

@@ -40,7 +40,17 @@ function eventThrottle ({ callback, time = 200, first = false, last = true }) {
     }
   }
 }
+function getWebType () {
+  return {
+    isIE: window.navigator.userAgent.toLocaleLowerCase().indexOf('msie') >= 1 || window.navigator.userAgent.toLocaleLowerCase().indexOf('trident') >= 1 || !!window.ActiveXObject || 'ActiveXObject' in window,
+    isEdge: window.navigator.userAgent.toLocaleLowerCase().indexOf('edge') >= 1,
+    isFirefox: window.navigator.userAgent.toLocaleLowerCase().indexOf('firefox') !== -1,
+    isChrome: window.navigator.userAgent.toLocaleLowerCase().indexOf('chrome') !== -1,
+    isSafari: window.navigator.userAgent.toLocaleLowerCase().indexOf('safari') !== -1
+  }
+}
 export {
   getParentsOffsetTop,
-  eventThrottle
+  eventThrottle,
+  getWebType
 }

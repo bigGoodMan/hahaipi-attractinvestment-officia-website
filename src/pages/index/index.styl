@@ -1,11 +1,15 @@
 // banner
 .index-banner
-  position relative
   height 960px
-  background url('./img/index-banner.png') no-repeat center
+  background url('./img/index-banner.png') no-repeat top center
 // 公用
 .index-common-title
   padding 70px 0 56px
+  .index-border
+    // width: calc((100% - 120px) / 2)
+    flex-shrink 1
+    img
+      max-width 100%
 .index-form
   .index-input-list
     width 300px
@@ -13,6 +17,8 @@
     box-sizing border-box
     padding-left 26px
     border-radius 5px
+    border 1px solid #f33763
+    box-shadow 0 0 12px 0 rgba(243, 55, 99, 0.6)
     &.index-input-phone
       margin-left 52px
     .index-input-content
@@ -20,7 +26,6 @@
       border none
       outline none
   .index-input-button
-    margin-left 60px
     .index-button-content
       width 200px
       user-select none
@@ -29,6 +34,31 @@
       border-radius 5px
       cursor pointer
       background-image linear-gradient(140deg, #ff5555, #ec266a)
+// banner
+.index-banner
+  position relative
+  .index-receive
+    padding-bottom 118px
+  .index-contact
+    padding-bottom 159px
+  .index-button-know
+    width 200px
+    user-select none
+    height 71px
+    line-height 71px
+    border-radius 5px
+    cursor pointer
+    border 3px solid #ffffff
+  .index-bottom
+    position absolute
+    bottom 0
+    left 0
+    right 0
+    width 100%
+    .index-list
+      width 400px
+      height 118px
+      background-color rgba(255, 255, 255, 0.3)
 // 洞见云介绍
 .index-introduce
   height 943px
@@ -50,7 +80,21 @@
     .index-list-container
       border 1px solid #dcdcdc
       border-top none
+      padding-top 40px
       transition all 0.3s ease-in-out
+      .index-introduce-icon
+        width 63px
+        height 62px
+        // transition all 0.3s ease-in-out
+        background url('./img/introduce-icon.png') no-repeat
+      .index-shop
+        background-position -11px -7px
+      .index-light
+        background-position -11px -197px
+      .index-brand
+        background-position -11px -394px
+      .index-money
+        background-position -11px -593px
     .index-list-top-block
       height 9px
       background-color #1f2325
@@ -60,12 +104,21 @@
       .index-list-container
         border 1px solid #f43862
         border-top none
+        .index-shop
+          background-position -218px -7px
+        .index-light
+          background-position -218px -197px
+        .index-brand
+          background-position -218px -394px
+        .index-money
+          background-position -218px -593px
       .index-list-top-block
         background-color #f43862
 // 嗨皮创业
 .index-entrepreneurship
-  height 1150px
   .index-img-banner
+    font-size 38px
+    background url('./img/venture-service.png') no-repeat center
     height 430px
   .index-title
     margin 53px 0 0 0
@@ -77,6 +130,7 @@
       margin-bottom 15px
 // 其它疑问
 .index-other-questions
+  background url('./img/ohter-question.png') no-repeat center
   height 565px
   .index-title
     padding-top 98px
@@ -84,3 +138,65 @@
     padding-top 50px
   .index-tip
     margin 105px 0 0 0
+// 洞见云+嗨皮商家
+.index-djyun-haipi
+  margin-top 93px
+  background-color #fafafa
+  .index-img
+    padding-bottom 200px
+// 软件下载
+.index-software-download
+  background url('./img/software-download-banner.png') no-repeat center
+  height 498px
+.index-icon
+  width 870px
+  margin 0 auto
+  .index-list
+    position relative
+    width 145px
+    height 189px
+    .index-list-container
+      position absolute
+      left 0
+      right 0
+      width 100%
+      .index-icon-container
+        position relative
+        width: 144px
+        height @width
+        img
+          position: absolute
+          bottom: 0
+          left 50%
+          transform: translate(-50%, 0)
+// 成功案例
+.index-success-case
+  padding-bottom: 47px;
+  .index-list
+    width 380px
+    img
+      max-width 100%
+// 免费试用
+.index-free-trial
+  height 436px
+  .index-title
+    padding-top 95px
+.index-swiper-case
+  height 496px
+  .swiper-container
+    width 100%
+    height 100%
+    .swiper-slide
+      position relative
+      .index-img-case
+        position absolute
+        top 0
+        left 0
+        bottom 0
+        right 0
+        margin auto
+      .index-swiper-case-info
+        position relative
+        z-index 9
+    .index-info
+      width 400px
