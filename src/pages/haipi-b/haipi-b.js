@@ -12,6 +12,9 @@ function haipiPhoneDown () {
     window.location.href = 'https://itunes.apple.com/cn/app/hai-pi-shang-jia/id1377936046?mt=8'
   } else if (webType.isAndroid) {
     $('.haipi-phone-down-button-android').show()
+  } else if (webType.isWin || webType.isMac) {
+    $('.haipi-phone-down-button-ios').show()
+    $('.haipi-phone-down-button-android').show()
   }
   if (webType.isWx) {
     $('.haipi-phone-down-mask').show()

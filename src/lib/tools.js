@@ -42,17 +42,31 @@ function eventThrottle ({ callback, time = 200, first = false, last = true }) {
 }
 function getWebType () {
   const ua = window.navigator.userAgent.toLocaleLowerCase()
+  const platform = navigator.platform.toLowerCase()
+  let isWin = (platform.indexOf('win32') > -1) || (platform.indexOf('win32') > -1) || (platform.indexOf('wow64') > -1)
+  let isMac = (platform.indexOf('mac68k') > -1) || (platform.indexOf('MacPPC') > -1) || (platform.indexOf('macintosh') > -1) || (platform.indexOf('macintel') > -1)
+  let isLinux = String(platform).indexOf('linux') > -1
+  let isAndroid = platform.indexOf('android') > -1
+  let isUnix = (platform.indexOf('X11') > -1) && !isWin && !isMac
+  let isIPhone = platform.indexOf('iphone') > -1
+  let isIpad = platform.indexOf('ipad') > -1
+  let isIpod = platform.indexOf('ipod') > -1
   return {
     isIE: ua.indexOf('msie') >= 1 || ua.indexOf('trident') >= 1 || !!window.ActiveXObject || 'ActiveXObject' in window,
     isEdge: ua.indexOf('edge') >= 1,
     isFirefox: ua.indexOf('firefox') !== -1,
     isChrome: ua.indexOf('chrome') !== -1,
     isSafari: ua.indexOf('safari') !== -1,
-    isAndroid: ua.indexOf('android') > -1 || ua.indexOf('linux') > -1,
+    isAndroid: isAndroid || ua.indexOf('android') > -1 || ua.indexOf('linux') > -1,
     isIOS: ua.indexOf('iphone os') > -1,
-    isIPhone: ua.indexOf('iphone;') > -1,
-    isIPad: ua.indexOf('ipad;') > -1,
-    isWx: ua.indexOf('micromessenger') > -1
+    isIPhone: isIPhone || ua.indexOf('iphone;') > -1,
+    isIPad: isIpad || ua.indexOf('ipad;') > -1,
+    isIpod,
+    isWx: ua.indexOf('micromessenger') > -1,
+    isWin,
+    isMac,
+    isLinux,
+    isUnix
   }
 }
 export {
