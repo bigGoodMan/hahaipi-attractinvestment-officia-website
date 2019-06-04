@@ -27,7 +27,7 @@ function haipiPhoneDown () {
     window.location.href = 'http://download-hahaipi.oss-cn-hangzhou.aliyuncs.com/mct/1x/haipishangjia_1_6_8_2.apk'
   }
   $('.haipi-phone-down-button-ios').click(() => {
-    window.location.href = 'http://download-hahaipi.oss-cn-hangzhou.aliyuncs.com/happy/3x/haipishiguang_3_3_5_2.apk'
+    window.location.href = 'https://itunes.apple.com/cn/app/hai-pi-shi-guang/id1149185654?mt=8'
   })
   $('.haipi-phone-down-button-android').click(() => {
     window.location.href = 'http://download-hahaipi.oss-cn-hangzhou.aliyuncs.com/happy/3x/haipishiguang_3_3_5_2.apk'
