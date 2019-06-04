@@ -31,7 +31,7 @@ function getHtmlsFunc (fileObj, com) {
       // favicon: `./src/pages/${name}/favicon.ico`,
       inject: true,
       hash: true,
-      chunks: [name, 'vender', ...Object.keys(com)],
+      chunks: ['main', name, 'vender', ...Object.keys(com)],
       minify: devEnv ? false : {
         removeComments: true, // 移除HTML中的注释
         collapseWhitespace: true, // 压缩代码
@@ -42,7 +42,10 @@ function getHtmlsFunc (fileObj, com) {
   return htmlWebpackPluginArr
 }
 const common = getEntrysFunc(path.resolve('src/assets'))
-const entry = { ...getEntrysFunc(path.resolve('src/pages')), ...common }
+const entry = {
+  main: path.resolve('src/main.js'),
+  ...getEntrysFunc(path.resolve('src/pages')),
+  ...common }
 module.exports = {
   entry,
   module: { // 关于模块配置

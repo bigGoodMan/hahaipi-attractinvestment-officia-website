@@ -8,6 +8,7 @@ function haipiPhoneDown () {
     $('.haipi-phone-down-mask').hide()
   })
   if (webType.isWx) {
+    console.log(webType.isIOS, window.navigator.userAgent)
     $('.haipi-phone-down-mask').show()
     $('.haipi-phone-down-button-ios').click(() => {
       $('.haipi-phone-down-mask').show()
@@ -15,6 +16,9 @@ function haipiPhoneDown () {
     $('.haipi-phone-down-button-android').click(() => {
       $('.haipi-phone-down-mask').show()
     })
+    if (webType.isIOS) {
+      window.location.href = 'https://itunes.apple.com/cn/app/hai-pi-shi-guang/id1149185654?mt=8'
+    }
     return
   }
   if (webType.isIOS) {

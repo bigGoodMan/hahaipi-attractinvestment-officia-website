@@ -8,6 +8,9 @@ function haipiPhoneDown () {
     $('.haipi-phone-down-mask').hide()
   })
   if (webType.isWx) {
+    if (webType.isIOS) {
+      window.location.href = 'https://itunes.apple.com/cn/app/hai-pi-shang-jia/id1377936046?mt=8'
+    }
     $('.haipi-phone-down-mask').show()
     $('.haipi-phone-down-button-ios').click(() => {
       $('.haipi-phone-down-mask').show()

@@ -1,7 +1,2 @@
-
-function testMain () {
-  console.log('这是main')
-}
-export {
-  testMain
-}
+import '@assets/css/global.styl'
+import '@assets/css/common.styl'

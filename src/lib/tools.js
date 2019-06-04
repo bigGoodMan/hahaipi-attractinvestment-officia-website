@@ -41,15 +41,17 @@ function eventThrottle ({ callback, time = 200, first = false, last = true }) {
   }
 }
 function getWebType () {
-  const ua = window.navigator.userAgent
+  const ua = window.navigator.userAgent.toLocaleLowerCase()
   return {
-    isIE: ua.toLocaleLowerCase().indexOf('msie') >= 1 || ua.toLocaleLowerCase().indexOf('trident') >= 1 || !!window.ActiveXObject || 'ActiveXObject' in window,
-    isEdge: ua.toLocaleLowerCase().indexOf('edge') >= 1,
-    isFirefox: ua.toLocaleLowerCase().indexOf('firefox') !== -1,
-    isChrome: ua.toLocaleLowerCase().indexOf('chrome') !== -1,
-    isSafari: ua.toLocaleLowerCase().indexOf('safari') !== -1,
-    isAndroid: ua.indexOf('Android') > -1 || ua.indexOf('Linux') > -1,
-    isIOS: !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+    isIE: ua.indexOf('msie') >= 1 || ua.indexOf('trident') >= 1 || !!window.ActiveXObject || 'ActiveXObject' in window,
+    isEdge: ua.indexOf('edge') >= 1,
+    isFirefox: ua.indexOf('firefox') !== -1,
+    isChrome: ua.indexOf('chrome') !== -1,
+    isSafari: ua.indexOf('safari') !== -1,
+    isAndroid: ua.indexOf('android') > -1 || ua.indexOf('linux') > -1,
+    isIOS: ua.indexOf('iphone os') > -1,
+    isIPhone: ua.indexOf('iphone;') > -1,
+    isIPad: ua.indexOf('ipad;') > -1,
     isWx: ua.indexOf('micromessenger') > -1
   }
 }
