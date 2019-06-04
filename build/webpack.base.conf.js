@@ -27,7 +27,7 @@ function getHtmlsFunc (fileObj, com) {
     htmlWebpackPluginArr.push(new HtmlWebpackPlugin({
       template: `./src/pages/${name}/${name}.html`,
       filename: `${name}.html`,
-      favicon: path.resolve(__dirname, `../src/pages/${name}/favicon-128×128.ico`),
+      favicon: path.resolve(__dirname, `../src/assets/img/favicon-128×128.ico`),
       // favicon: `./src/pages/${name}/favicon.ico`,
       inject: true,
       hash: true,

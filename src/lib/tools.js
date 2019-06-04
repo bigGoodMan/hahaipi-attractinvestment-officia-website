@@ -41,12 +41,16 @@ function eventThrottle ({ callback, time = 200, first = false, last = true }) {
   }
 }
 function getWebType () {
+  const ua = window.navigator.userAgent
   return {
-    isIE: window.navigator.userAgent.toLocaleLowerCase().indexOf('msie') >= 1 || window.navigator.userAgent.toLocaleLowerCase().indexOf('trident') >= 1 || !!window.ActiveXObject || 'ActiveXObject' in window,
-    isEdge: window.navigator.userAgent.toLocaleLowerCase().indexOf('edge') >= 1,
-    isFirefox: window.navigator.userAgent.toLocaleLowerCase().indexOf('firefox') !== -1,
-    isChrome: window.navigator.userAgent.toLocaleLowerCase().indexOf('chrome') !== -1,
-    isSafari: window.navigator.userAgent.toLocaleLowerCase().indexOf('safari') !== -1
+    isIE: ua.toLocaleLowerCase().indexOf('msie') >= 1 || ua.toLocaleLowerCase().indexOf('trident') >= 1 || !!window.ActiveXObject || 'ActiveXObject' in window,
+    isEdge: ua.toLocaleLowerCase().indexOf('edge') >= 1,
+    isFirefox: ua.toLocaleLowerCase().indexOf('firefox') !== -1,
+    isChrome: ua.toLocaleLowerCase().indexOf('chrome') !== -1,
+    isSafari: ua.toLocaleLowerCase().indexOf('safari') !== -1,
+    isAndroid: ua.indexOf('Android') > -1 || ua.indexOf('Linux') > -1,
+    isIOS: !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+    isWx: ua.indexOf('micromessenger') > -1
   }
 }
 export {
