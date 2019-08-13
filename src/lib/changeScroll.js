@@ -7,10 +7,12 @@ class ChangeScroll {
    * @param {*} controlClsEle 被控制的dom
    * @param {*} callback 回调
    */
-  constructor ({ idEle, clickClsEle, controlClsEle, callback = () => {} }) {
+  constructor ({ idEle, clickClsEle, controlClsEle, scrollTop = 0, scrollBottom = 0, callback = () => {} }) {
     this.w = idEle ? document.querySelector(idEle) : window
     this.idEle = idEle ? document.querySelector(idEle) : document.documentElement || document.body
     this.clickClsEle = clickClsEle
+    this.scrollTop = scrollTop
+    this.scrollBottom = scrollBottom
     this.controlClsEle = controlClsEle
     this.callback = callback
     this.clickClsEleArr = []
@@ -23,6 +25,8 @@ class ChangeScroll {
     const {
       clickClsEle,
       controlClsEle,
+      scrollTop,
+      scrollBottom,
       idEle
     } = this
     let animate = new Animate()
@@ -31,7 +35,8 @@ class ChangeScroll {
       let clickEle = ele
       let controlEle = document.querySelector(`${controlClsEle}[data-sign="${sign}"]`)
       ele.onclick = (e) => {
-        let top = getParentsOffsetTop(controlEle, idEle)
+        let top = getParentsOffsetTop(controlEle, idEle) - scrollTop + scrollBottom
+        top = top < 0 ? 0 : top
         // let height = controlEle.offsetHeight
         let clientHeight = idEle.clientHeight
         let scrollHeight = idEle.scrollHeight
@@ -40,6 +45,7 @@ class ChangeScroll {
         // if (typeof window.getComputedStyle(document.body).scrollBehavior === void 0) {
         //   // 传统的JS平滑滚动处理代码...
         // }
+        originScroll = originScroll || 0
         animate.clear()
         animate.easeOut(idEle.scrollTop || document.body.scrollTop, originScroll, 10, function (val) {
           let webType = getWebType()

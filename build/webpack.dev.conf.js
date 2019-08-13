@@ -15,7 +15,7 @@ const webpackConfigDev = {
     contentBase: path.join(__dirname, '../src'),
     publicPath: '/',
     host: '0.0.0.0',
-    port: '8080',
+    port: '8888',
     overlay: true, // 浏览器页面上显示错误
     open: true // 开启浏览器
     // stats: "errors-only", //stats: "errors-only"表示只打印错误：

@@ -9,8 +9,8 @@ $(function () {
   new ChangeScroll({
     clickClsEle: '.index-anchor-point-click',
     controlClsEle: '.index-menu-block',
+    scrollTop: 72,
     callback (obj) {
-      // console.log(obj)
     }
   })
   // 轮播操作
@@ -25,6 +25,11 @@ $(function () {
     // pagination: {
     //   el: '.swiper-pagination'
     // }
+  })
+  // 显示联系
+  $('#contact-us-btn').click(function () {
+    $(this).fadeOut()
+    $('#contact-us-form').fadeIn()
   })
   // 显示二维码
   $('.show-code-hover').hover(function () {
