@@ -4,7 +4,7 @@
   "description": "嗨皮招商官网",
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
-    "jquery": "^3.4.1"
+    "jquery": "^3.5.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
